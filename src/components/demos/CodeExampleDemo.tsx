@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { GlassCard, GlassButton } from "@/components/ui/GlassCard";
 import { Resource } from "@/lib/resources";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Code, Eye, Copy, Check, Heart, Star, Zap } from "lucide-react";
 
 interface CodeExampleDemoProps {
