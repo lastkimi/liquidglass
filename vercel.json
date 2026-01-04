@@ -4,7 +4,7 @@
   "buildCommand": "npm run build",
   "devCommand": "npm run dev",
   "installCommand": "npm install",
-  "regions": ["iad1", "sfo1", "sin1", "hnd1", "cdg1"],
+  "regions": ["iad1"],
   "functions": {
     "src/app/**/*.ts": {
       "maxDuration": 30
