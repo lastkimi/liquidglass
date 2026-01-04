@@ -276,6 +276,18 @@ function EnhancedLiveDemo({
 
 // 动画背景组件
 function AnimatedBackground() {
+  // 使用 useState 和 useEffect 来安全地访问 window 对象
+  const [dimensions, setDimensions] = useState({ width: 1200, height: 800 });
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setDimensions({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+  }, []);
+
   return (
     <div className="absolute inset-0 overflow-hidden">
       <motion.div
@@ -308,8 +320,8 @@ function AnimatedBackground() {
           key={i}
           className="absolute w-2 h-2 bg-white/20 rounded-full"
           initial={{
-            x: Math.random() * window.innerWidth,
-            y: Math.random() * window.innerHeight,
+            x: Math.random() * dimensions.width,
+            y: Math.random() * dimensions.height,
           }}
           animate={{
             y: [null, -100],
